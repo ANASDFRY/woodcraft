@@ -150,9 +150,9 @@ export default function DeliveryPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-between flex-row-reverse"> {/* Reverse layout direction */}
             {/* Logo and Title */}
-            <div className="flex flex-row-reverse md:flex-row items-center gap-3 md:gap-4">
+            <div className="flex flex-row-reverse md:flex-row items-center gap-2 md:gap-3">
               <h1 className="text-lg md:text-xl font-bold font-[Roboto] tracking-tight text-beige-100">
-                Wood Craft
+                WoodCraft
               </h1>
               <div className="group relative transform transition-all duration-300 hover:scale-[1.02]">
                 <Image

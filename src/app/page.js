@@ -116,7 +116,7 @@ export default function Home() {
       <header className="bg-wood-dark text-beige-100 py-3 sm:py-4 shadow-md relative overflow-hidden border-b-2 border-wood-medium">
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-between">
-            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
+            <div className="flex lex-row-reverse flex-col md:flex-row items-center gap-2 md:gap-3">
               <div className="group relative transform transition-all duration-300 hover:scale-[1.02]">
                 <Image
                   src={'/logoWhite.png'}
@@ -127,7 +127,7 @@ export default function Home() {
                 />
               </div>
               <h1 className="text-lg md:text-xl font-bold font-[Cairo] tracking-tight text-beige-100">
-                متجر النجارة الفنية
+                WoodCraft
               </h1>
             </div>
           </div>
