@@ -1,27 +1,37 @@
-"use client"; // This makes it a Client Component
+"use client"; // Ensures this runs in the browser
 
-import { PrismaClient } from "@prisma/client";
-import { useCallback } from "react";
-
-const prisma = new PrismaClient(); // Move this outside the component to avoid re-instantiating it
+import { useState } from "react";
 
 export default function RunWay() {
-  const runn = useCallback(async () => {
-    try {
-      const admin = await prisma.user.upsert({
-        where: { email: "anas@gmail.com" },
-        update: {},
-        create: {
-          email: "anas@gmail.com",
-          password: "admin123",
-          role: "ADMIN",
-        },
-      });
-      console.log("Admin created:", admin);
-    } catch (error) {
-      console.error("Error creating admin:", error);
-    }
-  }, []);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
-  return <button onClick={runn}>runn</button>;
+  const runn = async () => {
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/runway", { method: "POST" });
+      const data = await response.json();
+
+      if (data.success) {
+        setMessage("Admin created successfully!");
+      } else {
+        setMessage("Error: " + data.error);
+      }
+    } catch (error) {
+      setMessage("Request failed!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={runn} disabled={loading}>
+        {loading ? "Running..." : "Run"}
+      </button>
+      {message && <p>{message}</p>}
+    </div>
+  );
 }
