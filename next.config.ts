@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
       'i.ibb.co', // Add this domain
       'asd.rest',
       'www.arabanime.net',
-      'img.anslayer.com'
+      'img.anslayer.com',
+      'ibb.co',
+      'i.postimg.cc',
+      'res.cloudinary.com'
     ],
   },
 
