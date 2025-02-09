@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'white-coffee': '#F5F0E7',
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

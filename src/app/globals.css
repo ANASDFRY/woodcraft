@@ -29,3 +29,30 @@ body {
 .animate-shine {
   animation: shine 6s ease-in-out infinite;
 }
+
+@layer utilities {
+  .bg-wood-dark {
+    background-color: #3a2c23;
+  }
+  .bg-wood-medium {
+    background-color: #5d4a3e;
+  }
+  .bg-wood-light {
+    background-color: #8b7869;
+  }
+  .bg-beige-50 {
+    background-color: #f5f1ec;
+  }
+  .bg-beige-100 {
+    background-color: #e8e0d7;
+  }
+  .text-wood-dark {
+    color: #3a2c23;
+  }
+  .text-wood-medium {
+    color: #5d4a3e;
+  }
+  .border-wood-medium {
+    border-color: #5d4a3e;
+  }
+}

@@ -144,99 +144,74 @@ export default function DeliveryPage() {
   }
 
   return (
-    <div dir="rtl" className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50">
-      <header className="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white py-6 shadow-xl relative overflow-hidden">
-        {/* Shine effect overlay */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shine transform -skew-x-12" />
-        </div>
-
+    <div dir="rtl" className="min-h-screen bg-wood-pattern">
+      {/* Header with Wood Texture */}
+      <header className="bg-wood-dark text-beige-100 py-3 sm:py-4 shadow-md relative overflow-hidden border-b-2 border-wood-medium">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex items-center justify-between">
-            {/* Home Button */}
-            <Link 
-              href="/" 
-              className="flex items-center gap-2 group transition-transform hover:scale-105"
-            >
-              <svg 
-                className="w-6 h-6 text-white/90 group-hover:text-white" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" 
-                />
-              </svg>
-              <span className="text-sm font-medium hidden md:block opacity-90 group-hover:opacity-100">
-                الصفحة الرئيسية
-              </span>
-            </Link>
-
-            {/* Main Content */}
-            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4">
-              {/* Logo Container */}
+          <div className="flex items-center justify-between flex-row-reverse"> {/* Reverse layout direction */}
+            {/* Logo and Title */}
+            <div className="flex flex-row-reverse md:flex-row items-center gap-3 md:gap-4">
+              <h1 className="text-lg md:text-xl font-bold font-[Roboto] tracking-tight text-beige-100">
+                Wood Craft
+              </h1>
               <div className="group relative transform transition-all duration-300 hover:scale-[1.02]">
-                <div className="absolute -inset-1 rounded-full bg-white/15 blur-sm" />
                 <Image
-                  src={'/logoWhite.png'}
-                  alt="App Icon"
-                  width={60}
-                  height={60}
-                  className="rounded-lg border-2 border-white/15 shadow-md"
-                  priority
+                  src={'/logoWhite.png'} // Update with your carpentry logo
+                  alt="Carpentry Logo"
+                  width={50} // Reduced size for better fit
+                  height={50}
+                  className="rounded-full border-2 border-beige-200 shadow-sm"
                 />
-              </div>
-
-              {/* Title */}
-              <div className="text-center">
-                <h1 className="text-2xl md:text-4xl font-bold font-[Cairo] tracking-tight">
-                  إتمام عملية الشراء
-                </h1>
               </div>
             </div>
+
+            {/* Navigation Link */}
+            <Link href="/" className="flex items-center gap-2 group transition-transform hover:scale-105">
+              <svg className="w-6 h-6 text-beige-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </Link>
           </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-beige-50 rounded-xl shadow-lg overflow-hidden border-4 border-wood-medium">
           {/* Product Section */}
-          <div className="p-8 border-b border-gray-200">
+          <div className="p-6 md:p-8 bg-wood-light">
             <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
+              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-xl overflow-hidden shadow-lg border-4 border-wood-medium">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transform transition duration-500 hover:scale-105"
+                  className="object-cover transform transition duration-500 hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 60vw"
                   priority
                 />
               </div>
 
               <div className="flex-1 text-center md:text-right space-y-4">
-                <h2 className="text-3xl font-bold text-gray-800 font-[Tajawal]">{product.name}</h2>
-                <p className="text-blue-600 text-2xl font-bold mb-4">
-                  {product.price.toLocaleString()} د.ج
-                </p>
+                <h2 className="text-2xl font-bold text-wood-dark font-[Tajawal]">{product.name}</h2>
+                <div className="inline-block bg-wood-medium px-4 py-2 rounded-lg">
+                  <p className="text-beige-100 text-xl font-bold">
+                    {product.price.toLocaleString()} د.ج
+                  </p>
+                </div>
                 
                 <div className="flex items-center justify-center md:justify-start gap-4">
                   <button 
                     onClick={() => handleQuantity('decrement')}
-                    className="p-2 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors"
+                    className="p-2 rounded-lg bg-wood-dark text-beige-100 hover:bg-wood-medium transition-colors"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
                     </svg>
                   </button>
-                  <span className="text-2xl text-gray-500 font-medium w-8">{quantity}</span>
+                  <span className="text-xl text-wood-dark font-medium w-8">{quantity}</span>
                   <button 
                     onClick={() => handleQuantity('increment')}
-                    className="p-2 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors"
+                    className="p-2 rounded-lg bg-wood-dark text-beige-100 hover:bg-wood-medium transition-colors"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -247,11 +222,15 @@ export default function DeliveryPage() {
             </div>
           </div>
 
-          
-
           {/* Shipping Form */}
-          <div className="p-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-8">معلومات التوصيل</h3>
+          <div className="p-6 md:p-8">
+            <h3 className="text-xl font-bold text-wood-dark mb-6 border-b-2 border-wood-medium pb-2">
+              <svg className="w-6 h-6 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              معلومات التوصيل
+            </h3>
+            
             
             {error && (
               <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg flex items-center gap-3">
@@ -307,26 +286,26 @@ export default function DeliveryPage() {
             </div>
 
             {/* Enhanced Order Summary */}
-            <div className="p-8 bg-blue-50/30 border-2 border-blue-100 rounded-xl mx-6 my-8">
-              <div className="mb-6 flex items-center gap-2">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7"/>
+            <div className="p-6 bg-beige-100 rounded-xl border-2 border-wood-medium my-6">
+              <div className="mb-4 flex items-center gap-2 text-wood-dark">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
-                <h3 className="text-xl font-bold text-blue-700">ملخص الطلب</h3>
+                <h3 className="text-lg font-bold">ملخص الطلب</h3>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-4 bg-white rounded-xl border border-blue-50 shadow-sm">
-                  <span className="text-gray-600">سعر المنتجات</span>
-                  <span className="font-medium text-blue-600">{(product.price * quantity).toLocaleString()} د.ج</span>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center p-3 bg-beige-50 rounded-lg">
+                  <span className="text-wood-medium">سعر المنتجات</span>
+                  <span className="font-medium text-wood-dark">{(product.price * quantity).toLocaleString()} د.ج</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-white rounded-xl border border-blue-50 shadow-sm">
-                  <span className="text-gray-600">تكاليف الشحن</span>
-                  <span className="font-medium text-blue-600">{getShippingPrice().toLocaleString()} د.ج</span>
+                <div className="flex justify-between items-center p-3 bg-beige-50 rounded-lg">
+                  <span className="text-wood-medium">تكاليف الشحن</span>
+                  <span className="font-medium text-wood-dark">{getShippingPrice().toLocaleString()} د.ج</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-blue-600 rounded-xl border border-blue-700 shadow-lg">
-                  <span className="font-bold text-white">المجموع الكلي</span>
-                  <span className="text-xl font-bold text-white">
+                <div className="flex justify-between items-center p-3 bg-wood-medium rounded-lg">
+                  <span className="font-bold text-beige-100">المجموع الكلي</span>
+                  <span className="text-lg font-bold text-beige-100">
                     {((product.price * quantity) + getShippingPrice()).toLocaleString()} د.ج
                   </span>
                 </div>
@@ -336,7 +315,7 @@ export default function DeliveryPage() {
             <button
               onClick={handleOrder}
               disabled={isLoading}
-              className="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-xl font-bold text-lg transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
+              className="w-full bg-wood-dark hover:bg-wood-medium text-beige-100 py-3 px-6 rounded-lg font-bold text-lg transition-colors flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center gap-2">
