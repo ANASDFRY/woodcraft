@@ -258,11 +258,19 @@ export default function DeliveryPage() {
                 <input
                   type="tel"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    const input = e.target.value;
+                    if (/^\d*$/.test(input)) {
+                      setPhone(input);
+                    }
+                  }}
                   className="w-full px-4 py-3 border border-gray-300 text-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="06/05XXXXXXXX"
-                  pattern="[0]{1}[5-7]{1}[0-9]{8}"
+                  pattern="0[5-7][0-9]{8}"
+                  maxLength={10}
+                  required
                 />
+
               </div>
 
               <div className="md:col-span-2">

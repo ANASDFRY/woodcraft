@@ -6,7 +6,9 @@ const nextConfig: NextConfig = {
       'i2.wp.com', 
       'www.faselhds.care',
       'i.ibb.co', // Add this domain
-      'asd.rest'
+      'asd.rest',
+      'www.arabanime.net',
+      'img.anslayer.com'
     ],
   },
 

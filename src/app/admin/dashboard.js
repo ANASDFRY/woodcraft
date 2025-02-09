@@ -375,7 +375,7 @@ export default function AdminDashboard() {
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoading(false);
+        setLoadingSubmit(false);
       }
     }
     
@@ -907,7 +907,7 @@ export default function AdminDashboard() {
                             </div>
                             <p className="text-blue-600">{selectedOrder.totalMount} د.ج</p>
                           </div>
-                        ) : (<p>Loading...</p>)}
+                        ) : (<p className='text-gray-500'>تحميل...</p>)}
                       </div>
                     </div>
                   </div>
