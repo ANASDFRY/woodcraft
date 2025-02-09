@@ -170,7 +170,7 @@ export default function Home() {
             </Link>
           )) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-wood-dark text-xl font-[Cairo]">لا توجد منتجات متاحة</p>
+              <p className="text-wood-dark text-xl font-[Cairo]">جاري تحميل المنتجات...</p>
             </div>
           )}
         </div>

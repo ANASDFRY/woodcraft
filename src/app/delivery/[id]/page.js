@@ -140,7 +140,7 @@ export default function DeliveryPage() {
   };
 
   if (!product) {
-    return <div className="text-center py-8 text-xl text-gray-600">المنتج غير موجود</div>;
+    return <div className="text-center py-8 text-xl text-gray-600">جاري تحميل المنتج...</div>;
   }
 
   return (
