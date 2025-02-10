@@ -44,7 +44,7 @@ export default function DeliveryPage() {
     {"Wilaya": "Saida", "Prix_HT": 800.0},
     {"Wilaya": "El Oued", "Prix_HT": 900.0},
     {"Wilaya": "Biskra", "Prix_HT": 900.0},
-    {"Wilaya": "Ouargla", "Prix_HT": 900.0},
+    {"Wilaya": "Ouargla", "Prix_HT": 500.0},
     {"Wilaya": "El Mghaier", "Prix_HT": 900.0},
     {"Wilaya": "Ouled Djellal", "Prix_HT": 900.0},
     {"Wilaya": "El Meniaa", "Prix_HT": 950.0},
@@ -180,16 +180,21 @@ export default function DeliveryPage() {
           {/* Product Section */}
           <div className="p-6 md:p-8 bg-wood-light">
             <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-xl overflow-hidden shadow-lg border-4 border-wood-medium">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover transform transition duration-500 hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 60vw"
-                  priority
-                />
-              </div>
+            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-xl overflow-hidden shadow-lg border-4 border-wood-medium">
+              <Image
+                src={product.image || "/placeholder-wood.jpg"}
+                alt={product.name}
+                fill
+                className="object-scale-down transform transition duration-500 hover:scale-110" // Changed here
+                sizes="(max-width: 768px) 100vw, 60vw"
+                priority
+                style={{ 
+                  position: 'absolute',
+                  objectPosition: 'center center' // Explicit positioning
+                }}
+              />
+            </div>
+
 
               <div className="flex-1 text-center md:text-right space-y-4">
                 <h2 className="text-2xl font-bold text-wood-dark font-[Tajawal]">{product.name}</h2>

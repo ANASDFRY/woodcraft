@@ -142,13 +142,22 @@ export default function Home() {
               className="group bg-beige-50 rounded-xl shadow-lg overflow-hidden border-4 border-wood-medium transition-transform duration-300 hover:scale-105 hover:shadow-xl"
             >
               {/* Product Image */}
-              <div className="relative h-72 w-full">
+              <div className="relative h-72 w-full bg-wood-pattern bg-cover bg-center"> {/* Wood texture background */}
+                {/* Semi-transparent overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-b from-wood-dark/10 to-transparent"></div>
+                
                 <Image
                   src={product.image ?? "/placeholder-wood.jpg"}
                   alt={product.name}
                   fill
-                  className="object-cover transform transition duration-500 group-hover:scale-110"
+                  className="object-contain transform transition duration-500 group-hover:scale-105" // Reduced hover scale
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                  unoptimized={true}
+                  style={{
+                    padding: '1rem', // Creates space between image and wood background
+                    objectPosition: 'center center'
+                  }}
                 />
               </div>
               {/* Product Details */}

@@ -30,6 +30,21 @@ body {
   animation: shine 6s ease-in-out infinite;
 }
 
+
+/* In your global CSS */
+.bg-wood-pattern {
+  background-image: url('/wood-texture.jpg');
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+  background-color: var(--wood-pattern);
+}
+
+.group:hover .bg-wood-pattern {
+  background-color: var(--wood-medium);
+  transition: background-color 300ms ease;
+}
+
+
 @layer utilities {
   .bg-wood-dark {
     background-color: #3a2c23;
